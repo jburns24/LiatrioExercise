@@ -1,20 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\git\\liatrio-technical-exercise\\ApiTests\\ApiTests.csproj": {}
+    "C:\\git\\LiatrioExercise\\ApiTests\\ApiTests.csproj": {}
   },
   "projects": {
-    "C:\\git\\liatrio-technical-exercise\\ApiTests\\ApiTests.csproj": {
+    "C:\\git\\LiatrioExercise\\ApiTests\\ApiTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\git\\liatrio-technical-exercise\\ApiTests\\ApiTests.csproj",
+        "projectUniqueName": "C:\\git\\LiatrioExercise\\ApiTests\\ApiTests.csproj",
         "projectName": "ApiTests",
-        "projectPath": "C:\\git\\liatrio-technical-exercise\\ApiTests\\ApiTests.csproj",
-        "packagesPath": "C:\\Users\\Joshua\\.nuget\\packages\\",
-        "outputPath": "C:\\git\\liatrio-technical-exercise\\ApiTests\\obj\\",
+        "projectPath": "C:\\git\\LiatrioExercise\\ApiTests\\ApiTests.csproj",
+        "packagesPath": "C:\\Users\\jburns\\.nuget\\packages\\",
+        "outputPath": "C:\\git\\LiatrioExercise\\ApiTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Joshua\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\git\\NuGet.Config",
+          "C:\\Users\\jburns\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,12 +23,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "\\\\jburns-10p\\c$\\git\\nuget-internal": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\git\\LiatrioExercise\\Api\\Api.csproj": {
+                "projectPath": "C:\\git\\LiatrioExercise\\Api\\Api.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -73,6 +79,66 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\git\\LiatrioExercise\\Api\\Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\git\\LiatrioExercise\\Api\\Api.csproj",
+        "projectName": "Api",
+        "projectPath": "C:\\git\\LiatrioExercise\\Api\\Api.csproj",
+        "packagesPath": "C:\\Users\\jburns\\.nuget\\packages\\",
+        "outputPath": "C:\\git\\LiatrioExercise\\Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\git\\NuGet.Config",
+          "C:\\Users\\jburns\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "\\\\jburns-10p\\c$\\git\\nuget-internal": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

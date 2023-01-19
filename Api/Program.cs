@@ -1,15 +1,12 @@
-using System;
-using System.Text.Json;
+using ApiHelpers;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
 app.MapGet("/", () => {
-    var utcNow = DateTimeOffset.UtcNow;
-    return JsonSerializer.Serialize(new {
-        message = "There is no spoon",
-        timestamp = utcNow.ToUnixTimeSeconds()
-    });
+    //var utcNow = DateTimeOffset.UtcNow;
+    var res = Courier.GetMessage();
+    return res;
 });
 
 app.Run();

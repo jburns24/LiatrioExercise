@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lSGztyh1qNrWSOkRbst/Fj8mpt/gqUcgnt6KoPnaYNXJBh4+gUPJ7E4g0esqGOs0Fpb2zfY22bhuAebcaAp4Sg==",
+  "dgSpecHash": "LzSPePJ85DsvgbZE5oFNN5FouXnuspvxeBTqeIwwN8IKfv2xcWuIABQXCZ1DErxC2u75wjTWNIG3IysUkR/2wA==",
   "success": true,
-  "projectFilePath": "C:\\git\\liatrio-technical-exercise\\Api\\Api.csproj",
+  "projectFilePath": "C:\\git\\LiatrioExercise\\Api\\Api.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

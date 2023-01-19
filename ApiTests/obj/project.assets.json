@@ -973,6 +973,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "Api/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Api.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Api.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -3945,10 +3958,16 @@
         "system.xml.xdocument.4.0.11.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "Api/1.0.0": {
+      "type": "project",
+      "path": "../Api/Api.csproj",
+      "msbuildProject": "../Api/Api.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Api >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.3.2",
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.3.0",
@@ -3957,19 +3976,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Joshua\\.nuget\\packages\\": {}
+    "C:\\Users\\jburns\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git\\liatrio-technical-exercise\\ApiTests\\ApiTests.csproj",
+      "projectUniqueName": "C:\\git\\LiatrioExercise\\ApiTests\\ApiTests.csproj",
       "projectName": "ApiTests",
-      "projectPath": "C:\\git\\liatrio-technical-exercise\\ApiTests\\ApiTests.csproj",
-      "packagesPath": "C:\\Users\\Joshua\\.nuget\\packages\\",
-      "outputPath": "C:\\git\\liatrio-technical-exercise\\ApiTests\\obj\\",
+      "projectPath": "C:\\git\\LiatrioExercise\\ApiTests\\ApiTests.csproj",
+      "packagesPath": "C:\\Users\\jburns\\.nuget\\packages\\",
+      "outputPath": "C:\\git\\LiatrioExercise\\ApiTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Joshua\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\git\\NuGet.Config",
+        "C:\\Users\\jburns\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3977,12 +3997,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "\\\\jburns-10p\\c$\\git\\nuget-internal": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\git\\LiatrioExercise\\Api\\Api.csproj": {
+              "projectPath": "C:\\git\\LiatrioExercise\\Api\\Api.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

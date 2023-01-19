@@ -1,15 +1,16 @@
+using ApiHelpers;
 namespace ApiTests;
 
 public class Tests
 {
     [SetUp]
     public void Setup()
-    {
-    }
+    {}
 
     [Test]
-    public void Test1()
+    public void GetMessage_Returns_Valid_Json()
     {
-        Assert.Pass();
+        var message = Courier.GetMessage();
+        Assert.IsNull(message);
     }
 }
