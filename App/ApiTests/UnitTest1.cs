@@ -11,6 +11,6 @@ public class Tests
     public void GetMessage_Returns_Valid_Json()
     {
         var message = Courier.GetMessage();
-        Assert.IsNull(message);
+        Assert.IsNotNull(message);
     }
 }
