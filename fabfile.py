@@ -7,10 +7,12 @@ from fabric.contrib.console import confirm
 from fabric.contrib import files
 from fabric.utils import abort
 
+env.repository = 'localhost:5000'
+
 @task
 @runs_once
 def build_image():
-    local('docker build -t localhost:5000/rest-api -f Dockerfile .')
+    local(f'docker build -t {env.repository}/rest-api:v1.0.0 -f Dockerfile .')
 
 @task
 @runs_once
@@ -20,12 +22,12 @@ def start_registry():
 @task
 @runs_once
 def start_container():
-    local('docker run -it -p 80:80 --rm localhost:5000/rest-api')
+    local(f'docker run -it -p 80:80 --rm {env.repository}/rest-api:v1.0.0')
 
 @task
 @runs_once
 def push_image():
-    local('docker push localhost:5000/rest-api')
+    local(f'docker push {env.repository}/rest-api:v1.0.0')
 
 @task
 @runs_once
@@ -45,7 +47,12 @@ def all_the_things():
 def clean_up():
     execute('stop_registry')
     local('docker rmi registry:2')
-    local('docker rmi localhost:5000/rest-api:remote')
+    local(f'docker rmi {env.repository}/rest-api:v1.0.0')
+
+@task
+@runs_once
+def hub():
+    env.repository = 'jburns24'
 
 # Currently unused might have to use this for deploying to an EKS node.
 # @task

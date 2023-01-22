@@ -18,7 +18,9 @@ spec:
         app: rest-api
     spec:
       containers:
-      - image: 172.21.208.1:5000/rest-api
+      # Swap for pointing to local repository
+      # - image: 172.21.208.1:5000/rest-api
+      - image: jburns24/rest-api:v1.0.0
         name: rest-api
         imagePullPolicy: Always
         resources: {}

@@ -8,3 +8,7 @@
 - Create service for your deployment `kubectl create -f .\service.yaml` (Notes: `--port=80` has to match the port the application is listening on. `--type=LoadBalancer` is required so that your service is reachable outside of the cluster)
 - Start the service in the kube cluster `minikube service rest-api`
 
+### Cleanup
+
+1) in minikube you can just run `minikube delete`
+2) This deletes the entire container which houses all the k8 pods, developments, and services.
