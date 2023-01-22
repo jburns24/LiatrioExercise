@@ -1,0 +1,25 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: rest-api
+  name: rest-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rest-api
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: rest-api
+    spec:
+      containers:
+      - image: 172.21.208.1:5000/rest-api
+        name: rest-api
+        imagePullPolicy: Always
+        resources: {}
+status: {}
