@@ -6,8 +6,36 @@ from fabric.colors import *
 from fabric.contrib.console import confirm
 from fabric.contrib import files
 from fabric.utils import abort
+from fabric.colors import green
 
 env.repository = 'localhost:5000'
+
+@task
+@runs_once
+def add_eks_to_kubeconfig():
+    with lcd('./eks-cluster-tf'):
+        region = local('terraform output -raw region', capture=True)
+        cluster_name = local('terraform output -raw cluster_name', capture=True)
+        local(f'aws eks --region {region} update-kubeconfig --name {cluster_name}')
+
+@task
+@runs_once
+def apply():
+    with lcd('./eks-cluster-tf'):
+        local('terraform apply -auto-approve')
+        with lcd('./kubernetes-tf'):
+            local('terraform apply -auto-approve')
+            endpoint = local('terraform output -raw service_endpoint', capture=True)
+            print()
+            print(green(f'Great success!!\nhttp://{endpoint}'))
+
+@task
+@runs_once
+def destroy():
+    with lcd('./eks-cluster-tf/kubernetes-tf'):
+        local('terraform destroy -auto-approve')
+    with lcd('./eks-cluster-tf'):
+        local('terraform destroy -auto-approve')
 
 @task
 @runs_once
@@ -53,6 +81,10 @@ def clean_up():
 @runs_once
 def hub():
     env.repository = 'jburns24'
+
+def get_options(dir):
+    with lcd(dir):
+        return local('terraform output')
 
 # Currently unused might have to use this for deploying to an EKS node.
 # @task

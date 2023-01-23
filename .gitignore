@@ -3,4 +3,8 @@
 [Oo]bj/
 [Oo]ut/
 
+.terraform/
+.vscode/
+*.tfstate
+
 __pycache__

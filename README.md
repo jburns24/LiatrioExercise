@@ -4,6 +4,7 @@
 - Kubernetes (Tested on windows platform Client v1.26, linux platform Server v1.25, Kustomize v4.5.7)
 - [aws cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) (version: aws-cli/2.9.17)
 - [Configure the aws cli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+- Terraform (tested on version 1.3.7)
 
 ## Python3
 - `pip install -r requirements.txt`
