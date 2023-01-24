@@ -21,7 +21,7 @@ resource "kubernetes_deployment" "rest-api" {
       }
       spec {
         container {
-          image = "jburns24/rest-api:v1.0.0"
+          image = "jburns24/rest-api:${var.tag}"
           name  = "rest-api"
 
           port {

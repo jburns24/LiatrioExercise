@@ -3,12 +3,16 @@ WORKDIR /App
 
 # Copy everything
 COPY ./App ./
-# Set environment variable so we are listening on port 80 on all interfaces
-ENV ASPNETCORE_URLS=http://0.0.0.0:5005
 # Restore as distinct layers
-RUN ls
 RUN dotnet restore
+# Build the solution so we can run the tests
+RUN dotnet build
+# Change directories into the test project directory
+WORKDIR /App/ApiTests
+# Run unit tests and only build the image if the tests pass
+RUN dotnet test
 # Build and publish a release
+WORKDIR /App
 RUN dotnet publish -c Release -o out
 
 # Build runtime image
