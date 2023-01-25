@@ -2,6 +2,7 @@ from fabric.api import *
 from fabric.colors import green
 
 env.repository = 'jburns24'
+env.tag = 'v1.0.0'
 
 @task
 @runs_once

@@ -6,5 +6,6 @@
 .terraform/
 .vscode/
 *.tfstate
+myenv
 
 __pycache__
