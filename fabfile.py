@@ -1,7 +1,8 @@
+import os
 from fabric.api import *
 from fabric.colors import green
 
-env.repository = 'jburns24'
+env.repository = os.getenv('REST_DOCKER_REPOSITORY', 'jburns24')
 env.tag = 'v1.0.0'
 
 @task
@@ -77,6 +78,13 @@ def tag(version='v1.0.0'):
 
 @task
 @runs_once
-def loc():
-    env.repository = 'localhost:5000'
+def hub(rep='localhost:5000'):
+    env.repository = rep
+
+@task
+@runs_once
+def repository(rep='localhost:5000'):
+    print(env.repository)
+
+
 

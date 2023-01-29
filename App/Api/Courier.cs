@@ -7,7 +7,8 @@ namespace ApiHelpers
         public static string GetMessage()
         {
             var utcNow = DateTimeOffset.UtcNow;
-            return JsonSerializer.Serialize(new {
+            return JsonSerializer.Serialize(new
+            {
                 message = "There is no spoon",
                 timestamp = utcNow.ToUnixTimeSeconds()
             });

@@ -28,6 +28,7 @@ This repo is a demo of how one could deploy a highly available, scalable REST ap
 7) create a venv `python3 -m venv myenv`
 8) activate venv `./myenv/scripts/activate`
 9) run `pip install -r ./requirements.txt`
+10) run `terraform init`
 
 ### How to build
 ```
@@ -37,11 +38,18 @@ This command will build a docker image of the dotnet app located in the `./App` 
 
 _If you have a private repo_
 ```
-$ fab tag:v1.0.2 publish
+$ fab hub:<repository> tag:v1.0.2 publish
 ```
-Is an extra command that by default pushes to the public docker hub jburns24. This requires that you have configured your docker cli to point to the `jburns24` docker hub account.
+Additionally you can set `REST_DOCKER_REPOSITORY` and exclude the `hub` target.
+
+This command builds an image and pushes to a remote repository.
 
 ### How to deploy
+```
+fab tag:v1.0.1 apply
+```
+This command first creates a VPC with 3 private class C subnets and 3 public subnets, security groups, Elastic Network Interfaces, Elastic Load Balancer, and an EKS cluster with two managed node groups of t3.small ec2 instances. Next it deploys a kubernetes Deployment and Service to the provisioned EKS cluster. It exposes port 80 to the outside world and configures the Service as a LoadBalancer enabling traffic distribution, auto-scaling, rolling updates and more out of the box.
 
 ### Clean up
-1) `docker rmi jburns24/rest-api:<version>` Removes the docker image
+1) `fab destroy` Removes all AWS resources
+2) `docker rmi jburns24/rest-api:<version>` Removes the docker image
