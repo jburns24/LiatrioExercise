@@ -3,12 +3,12 @@ This repo is a demo of how one could deploy a highly available, scalable REST ap
 
 ## Table of contents
 - [DevOps Technical Exercise](#devops-technical-exercise)
-  - [Table of contents](#table-of-contents)
-    - [System Requirements](#system-requirements)
-    - [Setup](#setup)
-    - [How to build](#how-to-build)
-    - [How to deploy](#how-to-deploy)
-    - [Clean up](#clean-up)
+- [Table of contents](#table-of-contents)
+- [System Requirements](#system-requirements)
+- [Setup](#setup)
+- [How to build](#how-to-build)
+- [How to deploy](#how-to-deploy)
+- [Clean up](#clean-up)
 
 ### System Requirements
 - Docker (Tested on `Docker version 20.10.21, build baeda1f`)
